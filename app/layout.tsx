@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://priyankasiwach.com"),
   title: "Priyanka Siwach — Computer Science Student",
   description:
     "Computer Science student at Queens College CUNY. AI PM Intern at AIN Ventures, founder of PS Technologies, AWS Certified.",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     title: "Priyanka Siwach — Computer Science Student",
     description: "CS student building with AI, product, and cloud.",
     type: "website",
+    url: "https://priyankasiwach.com",
   },
 };
 

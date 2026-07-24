@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GraduationCap, Award } from "lucide-react";
 
 const queensCoursework = [
   "Data Structures",
@@ -13,116 +13,125 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="section-fade py-16 md:py-20 relative overflow-hidden min-h-[calc(100svh-3.5rem)]"
+      className="section-fade py-20 md:py-24 relative overflow-hidden"
     >
       <div className="section-wash" />
 
-      <div className="relative max-w-2xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center gap-4 mb-8">
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-6">
+        <div className="flex items-center gap-4 mb-4">
           <span className="section-label">Education</span>
           <div className="flex-1 glow-line opacity-40" />
         </div>
 
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink-900 mb-6">
-          Academic background
-        </h2>
+        <div className="mb-12">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-ink-900 mb-3">
+            Academic background
+          </h2>
+          <p className="text-ink-500 text-sm sm:text-base max-w-xl leading-relaxed">
+            Degrees, honors, and coursework that shape how I build.
+          </p>
+        </div>
 
-        <div className="space-y-4">
-          <article className="glass-card rounded-2xl p-5 sm:p-6">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
-              <div>
-                <h3 className="font-display text-lg sm:text-xl font-bold text-ink-900 leading-snug">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-7">
+          {/* Queens College */}
+          <a
+            href="https://www.qc.cuny.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="interactive-card group rounded-2xl p-6 sm:p-7 flex flex-col h-full no-underline"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border border-periwinkle-200/55 bg-periwinkle-100/40 flex items-center justify-center text-periwinkle-400 shrink-0 group-hover:bg-periwinkle-100/70 transition-colors">
+                <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" aria-hidden />
+              </div>
+              <div className="min-w-0 flex-1 pt-0.5">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-ink-900 leading-snug group-hover:text-periwinkle-400 transition-colors duration-200">
                   Queens College, City University of New York
                 </h3>
-                <p className="text-ink-700 font-medium text-sm mt-1">
+                <p className="text-ink-700 font-medium text-sm mt-1.5">
                   Computer Science BS
                 </p>
-                <p
-                  className="font-mono text-[10px] uppercase tracking-widest font-bold mt-1.5"
-                  style={{ color: "#6F70B5" }}
-                >
+                <p className="font-mono text-[10px] uppercase tracking-widest font-bold mt-2 text-periwinkle-400">
                   Expected May 2027 · New York, NY
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-periwinkle-200/50 bg-periwinkle-100/35">
-                <span className="font-mono text-[10px] uppercase tracking-wider text-ink-300">
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="glow-chip glow-chip-strong">
+                <span className="text-[10px] uppercase tracking-wider opacity-70 font-semibold">
                   GPA
                 </span>
-                <span className="font-display text-sm font-bold" style={{ color: "#6F70B5" }}>
-                  3.7/4.0
-                </span>
+                <span className="text-sm font-bold">3.7/4.0</span>
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-lg border border-periwinkle-200/50 bg-periwinkle-100/30">
-                <span className="font-display text-xs font-semibold text-ink-900">
-                  Dean&apos;s List
-                </span>
+              <span className="glow-chip glow-chip-strong text-xs">
+                Dean&apos;s List
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-lg border border-periwinkle-200/50 bg-periwinkle-100/30">
-                <span className="font-display text-xs font-semibold text-ink-900">
-                  Honors Student
-                </span>
+              <span className="glow-chip glow-chip-strong text-xs">
+                Honors Student
               </span>
             </div>
 
-            <div className="pt-4 border-t border-periwinkle-200/35">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-ink-300 mb-2.5 font-semibold">
+            <div className="mt-auto pt-5 border-t border-periwinkle-200/40">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-ink-300 mb-3 font-semibold">
                 Relevant coursework
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {queensCoursework.map((course) => (
-                  <span
-                    key={course}
-                    className="px-2.5 py-1 rounded-md font-mono text-[11px] text-ink-500 border border-periwinkle-200/40 bg-periwinkle-100/25"
-                  >
+                  <span key={course} className="glow-chip">
                     {course}
                   </span>
                 ))}
               </div>
             </div>
-          </article>
+          </a>
 
-          <article className="glass-card rounded-2xl p-5 sm:p-6">
-            <div className="mb-4">
-              <h3 className="font-display text-lg sm:text-xl font-bold text-ink-900 leading-snug">
-                LaGuardia Community College
-              </h3>
-              <p className="text-ink-700 font-medium text-sm mt-1">
-                Associate Degree
-              </p>
-              <p className="text-ink-700 text-sm mt-0.5">Associate in Science</p>
-              <p
-                className="font-mono text-[10px] uppercase tracking-widest font-bold mt-1.5"
-                style={{ color: "#6F70B5" }}
-              >
-                June 2024 · New York, NY
-              </p>
+          {/* LaGuardia */}
+          <div className="interactive-card group rounded-2xl p-6 sm:p-7 flex flex-col h-full">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border border-periwinkle-200/55 bg-periwinkle-100/40 flex items-center justify-center text-periwinkle-400 shrink-0 group-hover:bg-periwinkle-100/70 transition-colors">
+                <Award className="w-6 h-6 sm:w-7 sm:h-7" aria-hidden />
+              </div>
+              <div className="min-w-0 flex-1 pt-0.5">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-ink-900 leading-snug group-hover:text-periwinkle-400 transition-colors duration-200">
+                  LaGuardia Community College
+                </h3>
+                <p className="text-ink-700 font-medium text-sm mt-1.5">
+                  Associate Degree
+                </p>
+                <p className="text-ink-700 text-sm mt-0.5">Associate in Science</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest font-bold mt-2 text-periwinkle-400">
+                  June 2024 · New York, NY
+                </p>
+              </div>
+            </div>
 
+            <div className="mb-6">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-ink-300 mb-3 font-semibold">
+                Leadership & roles
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="glow-chip glow-chip-strong text-xs">
+                  President&apos;s Society Ambassador
+                </span>
+                <span className="glow-chip glow-chip-strong text-xs">
+                  Student Success Mentor
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-auto pt-5 border-t border-periwinkle-200/40">
               <a
                 href="/Associates.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-4 px-3 py-1.5 rounded-lg text-xs font-semibold text-periwinkle-400 border border-periwinkle-300/55 bg-transparent hover:border-periwinkle-400 hover:bg-periwinkle-100/30 transition-colors duration-200"
+                className="glow-btn"
               >
                 View Associate Degree PDF
                 <ExternalLink className="w-3.5 h-3.5" aria-hidden />
               </a>
             </div>
-
-            <div className="pt-3 border-t border-periwinkle-200/35">
-              <p className="text-sm text-ink-700 leading-relaxed">
-                <span className="font-semibold text-ink-900">
-                  President&apos;s Society Ambassador
-                </span>
-                <span className="text-periwinkle-300 mx-2" aria-hidden>
-                  ·
-                </span>
-                <span className="font-semibold text-ink-900">Student Success Mentor</span>
-              </p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>

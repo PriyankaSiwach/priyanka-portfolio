@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         soft: {
-          DEFAULT: "#FFFEFC",
-          muted: "#F7F6FB",
+          DEFAULT: "#E8EAF2",
+          muted: "#DEE1EC",
         },
         cream: {
           DEFAULT: "#FFF2E0",

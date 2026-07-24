@@ -200,7 +200,7 @@ export default function Experience() {
                             {exp.stack.map((tech) => (
                               <span
                                 key={tech}
-                                className="px-2.5 py-1 rounded-md font-mono text-[11px] border border-periwinkle-200/40 text-ink-500 bg-periwinkle-100/25"
+                                className="glow-chip"
                               >
                                 {tech}
                               </span>

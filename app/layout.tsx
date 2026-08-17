@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://priyankasiwach.com"),
   title: "Priyanka Siwach — Computer Science Student",
   description:
-    "Computer Science student at Queens College CUNY. AI PM Intern at AIN Ventures, founder of PS Technologies, AWS Certified.",
+    "Computer Science student at Queens College CUNY. Software Engineer Intern at AIN Ventures, founder of PS Technologies, AWS Certified.",
   keywords: [
     "Priyanka Siwach",
     "Computer Science Student",

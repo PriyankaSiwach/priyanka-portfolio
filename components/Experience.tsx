@@ -5,7 +5,7 @@ import { useState } from "react";
 const experiences = [
   {
     id: "ain",
-    role: "AI Product Manager Intern",
+    role: "Software Engineer Intern",
     company: "AIN Ventures",
     location: "New York, NY",
     period: "June 2026 – Present",

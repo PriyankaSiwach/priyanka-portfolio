@@ -8,7 +8,7 @@ const experiences = [
     role: "Software Engineer Intern",
     company: "AIN Ventures",
     location: "New York, NY",
-    period: "June 2026 – Present",
+    period: "June 2026 – August 2026",
     type: "Internship",
     summary:
       "Building Brain, AIN’s internal AI platform for startup sourcing and pitch deck analysis.",

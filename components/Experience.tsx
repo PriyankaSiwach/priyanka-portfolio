@@ -29,15 +29,15 @@ const experiences = [
     period: "2024 – Present",
     type: "Founder",
     summary:
-      "Building Applyfy, a live AI job-prep platform, and ChefCoach, an iOS app for AI fridge scanning and recipes.",
+      "Building Applyfy, a production AI job-prep platform, and ChefCoach, an App Store iOS app with vision pipelines and cost-controlled APIs.",
     description:
-      "Founded and shipped two consumer products end to end — from product design and full-stack engineering to launch and iteration.",
+      "Founded and shipped two products end to end — backend systems, auth, rate limiting, CI, payments, and App Store / web launch.",
     highlights: [
-      "Built Applyfy (applyfy.net), an AI-powered resume improvement and job-prep platform using Next.js, TypeScript, and OpenAI.",
-      "Shipped ChefCoach to the App Store — an iOS app that scans fridge contents and suggests personalized recipes with React, Node.js, and Capacitor.",
-      "Owned product, engineering, and go-to-market across both apps, including auth, subscriptions, and live deployments.",
+      "Built Applyfy (applyfy.net) — resume–job scoring with keyword gaps and rewrites in under 2 minutes, plus a token-bucket rate limiter across 15+ API routes to control OpenAI cost.",
+      "Shipped ChefCoach to the App Store with a GPT-4o vision pipeline, local API-outage fallback, token-bucket rate limiting, LRU caching, JWT auth, and GitHub Actions + Vitest CI.",
+      "Owned engineering across both products: auth, subscriptions/payments, input validation, and live deployments.",
     ],
-    stack: ["Next.js", "TypeScript", "OpenAI", "React", "Node.js", "iOS", "Product"],
+    stack: ["Next.js", "TypeScript", "OpenAI", "React", "Supabase", "Clerk", "Stripe", "Capacitor"],
   },
   {
     id: "moma",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Satellite } from "lucide-react";
+import { PenTool, Satellite } from "lucide-react";
 
 type Project = {
   id: string;
@@ -59,6 +59,31 @@ const projects: Project[] = [
     status: "Live · applyfy.net",
     live: true,
     links: [{ label: "Visit Website", href: "https://applyfy.net/" }],
+  },
+  {
+    id: "whiteboard",
+    title: "Collaborative Whiteboard",
+    category: "Distributed Systems",
+    tagline: "Real-time multiplayer canvas with CRDTs & Redis",
+    description:
+      "A real-time collaborative whiteboard where multiple users draw and edit at once with conflict-free sync. CRDTs keep every client consistent under concurrent edits, Redis pub/sub fans out updates with low latency, and Redis runs in Docker for a reproducible local and deployed setup — load-tested with 100+ concurrent users.",
+    cardPoints: [
+      "CRDT conflict-free sync",
+      "Redis pub/sub for real-time fan-out",
+      "Dockerized Redis · 100+ concurrent users",
+    ],
+    details: [
+      "CRDT-based sync so concurrent strokes and shapes merge cleanly without overwrites",
+      "Redis pub/sub for low-latency broadcast across active board sessions",
+      "Redis also backs ephemeral room/session state for connected clients",
+      "Dockerized Redis for identical local and deployment environments",
+      "Load-tested with 100+ concurrent users on a shared canvas",
+    ],
+    stack: ["CRDTs", "Redis", "Docker", "WebSockets", "TypeScript", "Node.js"],
+    accent: "#7B7DB8",
+    status: "Built · Scalable",
+    live: false,
+    links: [],
   },
   {
     id: "satellite",
@@ -142,7 +167,11 @@ function ProjectModal({
               </div>
             ) : (
               <div className="w-[72px] h-[72px] rounded-2xl border border-periwinkle-200/55 bg-periwinkle-100/50 mb-4 flex items-center justify-center text-periwinkle-400">
-                <Satellite className="w-8 h-8" aria-hidden />
+                {project.id === "whiteboard" ? (
+                  <PenTool className="w-8 h-8" aria-hidden />
+                ) : (
+                  <Satellite className="w-8 h-8" aria-hidden />
+                )}
               </div>
             )}
             <p
@@ -261,7 +290,11 @@ export default function SelectedWork() {
                     </div>
                   ) : (
                     <div className="w-14 h-14 rounded-xl border border-periwinkle-200/50 bg-periwinkle-100/45 flex items-center justify-center text-periwinkle-400 shrink-0">
-                      <Satellite className="w-6 h-6" aria-hidden />
+                      {project.id === "whiteboard" ? (
+                        <PenTool className="w-6 h-6" aria-hidden />
+                      ) : (
+                        <Satellite className="w-6 h-6" aria-hidden />
+                      )}
                     </div>
                   )}
                   <span

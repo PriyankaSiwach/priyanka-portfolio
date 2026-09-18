@@ -34,6 +34,21 @@ const projects = [
     logoPlaceholder: "⚡",
   },
   {
+    id: "whiteboard",
+    title: "Collaborative Whiteboard",
+    tagline: "Real-time multiplayer canvas with CRDTs & Redis",
+    category: "Distributed Systems",
+    status: "Built · Scalable",
+    statusColor: "#7B7DB8",
+    color: "#7B7DB8",
+    description:
+      "A real-time collaborative whiteboard where multiple users draw and edit simultaneously with conflict-free sync. Uses CRDTs for eventual consistency, Redis pub/sub for low-latency fan-out, and Dockerized Redis for reproducible local and deployed environments — tested with 100+ concurrent users.",
+    stack: ["CRDTs", "Redis", "Docker", "WebSockets", "TypeScript"],
+    links: { github: "#" },
+    metrics: ["100+ concurrent users", "CRDT conflict-free sync", "Redis + Docker"],
+    logoPlaceholder: "🖊️",
+  },
+  {
     id: "brain",
     title: "Brain · AIN Ventures",
     tagline: "LLM-powered startup pitch deck analyzer",

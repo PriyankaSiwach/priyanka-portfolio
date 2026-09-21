@@ -13,8 +13,12 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <Navbar />
-      <Hero />
-      <About />
+      <div className="section-enter" style={{ animationDelay: "0.15s" }}>
+        <Hero />
+      </div>
+      <div className="section-enter" style={{ animationDelay: "0.35s" }}>
+        <About />
+      </div>
       <Skills />
       <SelectedWork />
       <Experience />

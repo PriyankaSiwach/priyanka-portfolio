@@ -11,15 +11,15 @@ const experiences = [
     period: "June 2026 – August 2026",
     type: "Internship",
     summary:
-      "Building Brain, AIN’s internal AI platform for startup sourcing and pitch deck analysis.",
+      "Building Python systems on Brain, AIN’s internal AI platform for founder sourcing, guardrails testing, and deal automation.",
     description:
-      "Work on Brain, AIN Ventures’ internal AI platform for startup sourcing, pitch deck analysis, and investment research.",
+      "Engineering features on Brain, AIN Ventures’ internal AI platform — sourcing agents, adversarial evaluation, and deal-pipeline automation in Python.",
     highlights: [
-      "Defined product requirements for Brain, AIN’s internal AI tool for startup sourcing and pitch deck analysis.",
-      "Designed AI-driven workflows to rank startup opportunities, extract key deck insights, and accelerate VC deal review.",
-      "Collaborated with engineers to convert analyst needs into technical specifications for AI deal retrieval and memo generation.",
+      "Built a Python-based sourcing agent in Brain, AIN Ventures’ internal AI platform, to re-surface promising founders below the 90-point auto-reject threshold, adding 5+ founders per day to the outreach pipeline.",
+      "Built a 200+ case adversarial test suite in Python to stress-test AI guardrails, identify failure cases, and validate fixes across edge-case and malicious inputs.",
+      "Shipped deal-retrieval and AI-generated investment-memo features from specification through release, using Python to automate data processing and retrieval across AIN’s deal pipeline.",
     ],
-    stack: ["AI Product Management", "LLM Workflows", "Product Requirements", "Startup Analysis"],
+    stack: ["Python", "LLM Systems", "Adversarial Testing", "Deal Pipeline Automation"],
   },
   {
     id: "founder",
@@ -41,20 +41,21 @@ const experiences = [
   },
   {
     id: "moma",
-    role: "Cybersecurity & IT Intern",
+    role: "Cybersecurity Engineer Intern",
     company: "Museum of Modern Art (MoMA)",
     location: "New York, NY",
     period: "March 2024 – May 2024",
     type: "Internship",
     summary:
-      "Supported MoMA’s cybersecurity systems, access control, and employee-data workflows.",
+      "Strengthened MoMA’s access-control and identity systems through data validation, SQL workflows, and security portal improvements.",
     description:
-      "Supported MoMA’s internal cybersecurity systems, access-control operations, and employee-data workflows.",
+      "Worked on MoMA’s physical access-control and identity systems — validating employee records at scale and improving cybersecurity portal workflows with SQL-backed data operations.",
     highlights: [
-      "Worked with directors to improve MoMA’s internal cybersecurity web portal and strengthen security workflows.",
-      "Used SQL queries and Excel to manage employee ID records and support access-control operations.",
+      "Updated and validated identity, photo, and badge-access records for 500+ MoMA employees, strengthening the accuracy and integrity of the museum’s physical access-control system.",
+      "Used SQL queries and Excel to manage employee ID datasets and keep access-control records consistent across internal systems.",
+      "Partnered with directors to improve MoMA’s internal cybersecurity web portal and harden identity and access workflows.",
     ],
-    stack: ["Cybersecurity", "SQL", "Access Control", "IT Operations"],
+    stack: ["SQL", "Access Control Systems", "Identity Data", "Cybersecurity"],
   },
   {
     id: "presidents-society",
@@ -125,7 +126,7 @@ export default function Experience() {
                     className={`absolute left-0 top-5 sm:top-6 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center bg-soft transition-colors ${
                       isOpen
                         ? "border-periwinkle-400 bg-periwinkle-100"
-                        : "border-periwinkle-300/70 bg-white"
+                        : "border-periwinkle-300/70 bg-periwinkle-100"
                     }`}
                     aria-hidden
                   >

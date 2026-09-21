@@ -52,11 +52,11 @@ function BadgeSlot({
 
   return (
     <div
-      className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-xl border shrink-0 overflow-hidden flex flex-col items-center justify-center gap-0.5 bg-white"
+      className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-xl border shrink-0 overflow-hidden flex flex-col items-center justify-center gap-0.5 bg-periwinkle-100"
       style={{
         borderColor: failed ? `${accent}70` : `${accent}55`,
         borderStyle: failed ? "dashed" : "solid",
-        background: failed ? `${accent}12` : "#fff",
+        background: failed ? `${accent}12` : "#141828",
       }}
     >
       {!failed ? (

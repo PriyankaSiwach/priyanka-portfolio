@@ -188,7 +188,7 @@ const projects: Project[] = [
 function ProjectIcon({ project }: { project: Project }) {
   if (project.icon) {
     return (
-      <div className="w-14 h-14 rounded-xl overflow-hidden border border-periwinkle-200/50 bg-white shadow-card shrink-0">
+      <div className="w-14 h-14 rounded-xl overflow-hidden border border-periwinkle-200/50 bg-periwinkle-100 shadow-card shrink-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={project.icon} alt="" className="w-full h-full object-cover" />
       </div>
@@ -246,7 +246,7 @@ function ProjectModal({
         onClick={onClose}
       />
 
-      <div className="relative w-full sm:max-w-lg max-h-[90dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl bg-white border border-periwinkle-200/60 shadow-soft">
+      <div className="relative w-full sm:max-w-lg max-h-[90dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl bg-[#10131F] border border-periwinkle-200/40 shadow-soft">
         <div className="p-6 sm:p-8">
           <button
             type="button"
@@ -259,7 +259,7 @@ function ProjectModal({
 
           <div className="flex flex-col items-center text-center mb-6 pt-2">
             {project.icon ? (
-              <div className="w-[72px] h-[72px] rounded-2xl overflow-hidden border border-periwinkle-200/55 bg-white mb-4 shadow-card">
+              <div className="w-[72px] h-[72px] rounded-2xl overflow-hidden border border-periwinkle-200/55 bg-periwinkle-100 mb-4 shadow-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={project.icon}
@@ -403,7 +403,7 @@ export default function SelectedWork() {
                     className={`text-[10px] font-mono px-2.5 py-1 rounded-full border shrink-0 ${
                       project.live
                         ? "glow-chip !rounded-full !py-1"
-                        : "border-ink-300/25 text-ink-300 bg-white/50"
+                        : "border-ink-300/25 text-ink-300 bg-periwinkle-100/50"
                     }`}
                   >
                     {project.live ? "Live" : "Private"}

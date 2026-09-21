@@ -88,10 +88,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 nav-blur border-b transition-[background-color,border-color] duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 nav-blur border-b nav-enter transition-[background-color,border-color] duration-300 ${
         scrolled || mobileOpen
-          ? "bg-white/72 border-periwinkle-200/55"
-          : "bg-white/55 border-periwinkle-200/35"
+          ? "bg-[#0B0D14]/80 border-periwinkle-200/40"
+          : "bg-[#0B0D14]/45 border-periwinkle-200/20"
       }`}
     >
       <div className="max-w-5xl mx-auto px-5 sm:px-6 h-14 flex items-center justify-between gap-4">
@@ -146,7 +146,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden nav-blur bg-white/80 border-t border-periwinkle-200/35 px-5 py-4">
+        <div className="md:hidden nav-blur bg-[#0B0D14]/95 border-t border-periwinkle-200/30 px-5 py-4">
           <div className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <Link

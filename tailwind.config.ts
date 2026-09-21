@@ -10,26 +10,26 @@ const config: Config = {
     extend: {
       colors: {
         soft: {
-          DEFAULT: "#E8EAF2",
-          muted: "#DEE1EC",
+          DEFAULT: "#07090F",
+          muted: "#0E111A",
         },
         cream: {
-          DEFAULT: "#FFF2E0",
-          dark: "#F5E8CC",
+          DEFAULT: "#1A1520",
+          dark: "#12101A",
         },
         periwinkle: {
-          100: "#E8EBF8",
-          200: "#C0C9EE",
-          300: "#A2AADB",
-          400: "#6F70B5",
-          500: "#5A5B9A",
-          600: "#48497F",
+          100: "#141828",
+          200: "#2A3050",
+          300: "#8B90C8",
+          400: "#A8ADE0",
+          500: "#C0C5F0",
+          600: "#D4D7F5",
         },
         ink: {
-          900: "#12142A",
-          700: "#1E2340",
-          500: "#3A4060",
-          300: "#6B7190",
+          900: "#F0F2FA",
+          700: "#C8CDDF",
+          500: "#9096B0",
+          300: "#6A7088",
         },
       },
       fontFamily: {
@@ -78,15 +78,15 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "grid-pattern": "linear-gradient(rgba(137,138,196,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(137,138,196,0.05) 1px, transparent 1px)",
+        "grid-pattern": "linear-gradient(rgba(168,173,224,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(168,173,224,0.05) 1px, transparent 1px)",
       },
       backgroundSize: {
         "grid": "60px 60px",
       },
       boxShadow: {
-        "soft": "0 4px 18px rgba(18,20,42,0.04), 0 1px 4px rgba(111,112,181,0.06)",
-        "card": "0 2px 12px rgba(111,112,181,0.08)",
-        "periwinkle": "0 0 24px rgba(111,112,181,0.12)",
+        "soft": "0 8px 32px rgba(0,0,0,0.35), 0 1px 0 rgba(168,173,224,0.06)",
+        "card": "0 4px 20px rgba(0,0,0,0.35)",
+        "periwinkle": "0 0 28px rgba(168,173,224,0.18)",
       },
     },
   },

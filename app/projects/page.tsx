@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2.01-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z" />
+    </svg>
+  );
+}
 
 const projects = [
   {
@@ -16,7 +23,7 @@ const projects = [
     longDescription:
       "Built a crash-safe LSM-tree storage engine from scratch with zero lost acknowledged writes across 1,000 randomized SIGKILL trials (~2.2M operations), using a checksummed write-ahead log, torn-write recovery, and atomic file renames. Bloom filters (10 bits/key) cut disk reads per missing-key lookup 99% and raised lookup throughput 4.5×. Streaming k-way merge compaction reduced disk usage 54% and missing-key p50 latency ~40×. A negative test proved the crash harness detects real data loss, and each optimization was checked against saved baselines.",
     stack: ["Python", "LSM-Tree", "WAL", "Bloom Filters", "Compaction"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/Storage-Engine" },
     metrics: ["0 lost writes · 1K crash trials", "4.5× lookup throughput", "54% less disk · 40× faster p50"],
     logoPlaceholder: "🗄️",
   },
@@ -33,7 +40,10 @@ const projects = [
     longDescription:
       "Shipped ChefCoach with a GPT-4o vision pipeline and a local fallback for API outages. Built a GitHub Actions CI pipeline with Vitest covering scan quotas, allergy filters, and malformed AI JSON. Engineered a token-bucket rate limiter and an LRU cache (HashMap + doubly linked list) on the recipe-generation endpoint to cut redundant OpenAI calls and cap per-user API cost, alongside JWT auth and input validation. Stack: React, TypeScript, Capacitor, Supabase, OpenAI, RevenueCat.",
     stack: ["React", "TypeScript", "Capacitor", "Supabase", "OpenAI", "RevenueCat"],
-    links: { app: "https://apps.apple.com/us/app/chefcoach/id6777299606", github: "#" },
+    links: {
+      app: "https://apps.apple.com/us/app/chefcoach/id6777299606",
+      github: "https://github.com/PriyankaSiwach/ChefCoach",
+    },
     metrics: ["GPT-4o vision + fallback", "Token-bucket + LRU cache", "Vitest CI pipeline"],
     logoPlaceholder: "🍳",
   },
@@ -50,7 +60,10 @@ const projects = [
     longDescription:
       "Applyfy is a production job-prep platform at applyfy.net. It scores a resume against a job post and returns keyword gaps plus rewrite suggestions in under 2 minutes. A token-bucket rate limiter runs across 15+ API routes to throttle per-user OpenAI calls and prevent cost overrun. Built with Next.js, TypeScript, React, Tailwind CSS, Supabase, Clerk, Stripe, and the OpenAI API.",
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Clerk", "Stripe", "OpenAI"],
-    links: { live: "https://applyfy.net", github: "#" },
+    links: {
+      live: "https://applyfy.net",
+      github: "https://github.com/PriyankaSiwach/Applyfy",
+    },
     metrics: ["<2 min resume–job scoring", "Rate limiter · 15+ routes", "Clerk + Stripe + Supabase"],
     logoPlaceholder: "⚡",
   },
@@ -67,9 +80,26 @@ const projects = [
     longDescription:
       "I designed the sync layer around CRDTs so concurrent edits merge cleanly instead of overwriting each other — strokes, shapes, and cursors stay consistent even when users draw at the same time. Redis pub/sub broadcasts board updates to connected clients with low latency, and Redis also backs ephemeral session state for active rooms. The Redis instance runs in Docker so local development and deployment share the same reproducible setup. Load-tested the system with 100+ concurrent users collaborating on a shared canvas without breaking sync integrity.",
     stack: ["CRDTs", "Redis", "Docker", "WebSockets", "TypeScript", "Node.js"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/Collaborative_Whiteboard" },
     metrics: ["100+ concurrent users", "CRDT conflict-free sync", "Redis pub/sub + Docker"],
     logoPlaceholder: "🖊️",
+  },
+  {
+    id: "satellite",
+    title: "Satellite Telemetry",
+    tagline: "Satellite tracking with AWS-backed telemetry storage",
+    category: "Cloud · Space Data",
+    status: "Built",
+    statusColor: "#A2AADB",
+    color: "#A2AADB",
+    description:
+      "A satellite telemetry website that tracks latitude, longitude, and speed for satellites in space, with AWS DynamoDB integrated to store and retrieve telemetry data.",
+    longDescription:
+      "Built a satellite telemetry web app that tracks latitude, longitude, and speed for satellites in space. AWS DynamoDB stores and retrieves telemetry so the cloud data layer can scale with the tracking workload.",
+    stack: ["AWS DynamoDB", "AWS", "Next.js", "TypeScript", "REST APIs"],
+    links: { github: "https://github.com/PriyankaSiwach/satellite-platform" },
+    metrics: ["Lat / long / speed tracking", "DynamoDB storage", "Cloud-backed pipeline"],
+    logoPlaceholder: "🛰️",
   },
   {
     id: "brain",
@@ -89,6 +119,23 @@ const projects = [
     logoPlaceholder: "🧠",
   },
   {
+    id: "rag-qa",
+    title: "RAG Document Q&A",
+    tagline: "Ask questions about any document using LangChain & Pinecone",
+    category: "AI · RAG",
+    status: "Open Source",
+    statusColor: "#898AC4",
+    color: "#898AC4",
+    description:
+      "A retrieval-augmented generation app that embeds document chunks with OpenAI, stores them in Pinecone, and answers questions only from your files — not from the model’s general knowledge.",
+    longDescription:
+      "Loads documents, splits them into chunks, converts each chunk into OpenAI embeddings, and stores them in Pinecone. When you ask a question, semantic search finds the most relevant chunks and GPT answers from those passages only. Built with Python, LangChain, Pinecone, and OpenAI.",
+    stack: ["Python", "LangChain", "Pinecone", "OpenAI", "RAG"],
+    links: { github: "https://github.com/PriyankaSiwach/rag-document-qa" },
+    metrics: ["Document embeddings", "Semantic search", "Grounded GPT answers"],
+    logoPlaceholder: "📄",
+  },
+  {
     id: "portfolio",
     title: "Portfolio Website",
     tagline: "This site — built with Next.js + TypeScript",
@@ -101,7 +148,7 @@ const projects = [
     longDescription:
       "This portfolio was designed and built from scratch. Features a canvas-based particle animation, typewriter effect, glass-card components, and a warm periwinkle + cream color palette. Responsive across all devices.",
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "React 19"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/priyanka-portfolio" },
     metrics: ["Particle animation system", "Typewriter effects", "Responsive design"],
     logoPlaceholder: "🌐",
   },
@@ -113,7 +160,6 @@ export default function ProjectsPage() {
       <Navbar />
 
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-20">
-        {/* Back link */}
         <Link href="/" className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-ink-300 hover:text-periwinkle-400 transition-colors mb-12">
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -121,27 +167,24 @@ export default function ProjectsPage() {
           Back home
         </Link>
 
-        {/* Header */}
         <div className="mb-16">
           <span className="section-label block mb-4">Projects</span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-ink-900 leading-tight">
-            Things I've{" "}
+            Things I&apos;ve{" "}
             <span className="text-gradient">Built</span>
           </h1>
           <p className="text-ink-500 text-lg mt-4 max-w-2xl">
-            A collection of products I've shipped — from App Store apps to AI-powered web platforms and internal tools.
+            A collection of products I&apos;ve shipped — from App Store apps to AI-powered web platforms and internal tools.
           </p>
         </div>
 
-        {/* Projects */}
         <div className="space-y-8">
-          {projects.map((project, i) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="glass-card rounded-2xl p-8 md:p-10 hover:shadow-soft transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-start gap-8">
-                {/* Left: icon + meta */}
                 <div className="flex-shrink-0">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl border mb-4"
@@ -161,7 +204,6 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                {/* Right: content */}
                 <div className="flex-1">
                   <h2 className="font-display text-2xl font-bold text-ink-900 mb-1">{project.title}</h2>
                   <p className="text-ink-500 font-medium mb-4">{project.tagline}</p>
@@ -169,7 +211,6 @@ export default function ProjectsPage() {
                   <p className="text-ink-700 leading-relaxed mb-4">{project.description}</p>
                   <p className="text-ink-500 text-sm leading-relaxed mb-6">{project.longDescription}</p>
 
-                  {/* Metrics */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.metrics.map((m) => (
                       <span key={m} className="px-3 py-1.5 bg-periwinkle-100/60 rounded-lg text-xs text-ink-500 border border-periwinkle-200/50 font-mono">
@@ -180,18 +221,30 @@ export default function ProjectsPage() {
 
                   <div className="h-px mb-6" style={{ background: `linear-gradient(90deg, ${project.color}25, transparent)` }} />
 
-                  {/* Stack + links */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 rounded-lg font-mono text-xs border"
-                          style={{ borderColor: `${project.color}28`, color: `${project.color}BB` }}
+                    <div className="flex items-center gap-3 flex-wrap">
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-periwinkle-200/70 text-ink-500 hover:text-ink-900 hover:bg-periwinkle-100/60 transition-colors"
+                          aria-label={`${project.title} on GitHub`}
                         >
-                          {tech}
-                        </span>
-                      ))}
+                          <GitHubIcon className="w-4 h-4" />
+                        </a>
+                      )}
+                      <div className="flex flex-wrap gap-2">
+                        {project.stack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 rounded-lg font-mono text-xs border"
+                            style={{ borderColor: `${project.color}28`, color: `${project.color}BB` }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
                     <div className="flex gap-4 flex-shrink-0">
@@ -202,15 +255,9 @@ export default function ProjectsPage() {
                         </a>
                       )}
                       {project.links.app && (
-                        <a href={project.links.app}
+                        <a href={project.links.app} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase text-periwinkle-400 hover:text-periwinkle-500 transition-colors">
                           App Store ↗
-                        </a>
-                      )}
-                      {project.links.github && (
-                        <a href={project.links.github}
-                          className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase text-ink-300 hover:text-ink-500 transition-colors">
-                          GitHub ↗
                         </a>
                       )}
                     </div>

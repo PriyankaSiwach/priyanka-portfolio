@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PenTool, Satellite } from "lucide-react";
+import { PenTool, Satellite, Database, FileSearch } from "lucide-react";
+
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2.01-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z" />
+    </svg>
+  );
+}
 
 type Project = {
   id: string;
@@ -16,6 +24,7 @@ type Project = {
   status: string;
   live: boolean;
   icon?: string;
+  github?: string;
   links: { label: string; href: string }[];
 };
 
@@ -42,7 +51,10 @@ const projects: Project[] = [
     accent: "#6F70B5",
     status: "Open Source",
     live: false,
-    links: [],
+    github: "https://github.com/PriyankaSiwach/Storage-Engine",
+    links: [
+      { label: "View on GitHub", href: "https://github.com/PriyankaSiwach/Storage-Engine" },
+    ],
   },
   {
     id: "chefcoach",
@@ -62,6 +74,7 @@ const projects: Project[] = [
     icon: "/chefcoach-icon.png",
     status: "Live on App Store",
     live: true,
+    github: "https://github.com/PriyankaSiwach/ChefCoach",
     links: [{ label: "Open App Store", href: "https://apps.apple.com/us/app/chefcoach/id6777299606" }],
   },
   {
@@ -82,6 +95,7 @@ const projects: Project[] = [
     icon: "/applyfy-icon.png",
     status: "Live · applyfy.net",
     live: true,
+    github: "https://github.com/PriyankaSiwach/Applyfy",
     links: [{ label: "Visit Website", href: "https://applyfy.net/" }],
   },
   {
@@ -107,7 +121,13 @@ const projects: Project[] = [
     accent: "#7B7DB8",
     status: "Built · Scalable",
     live: false,
-    links: [],
+    github: "https://github.com/PriyankaSiwach/Collaborative_Whiteboard",
+    links: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/PriyankaSiwach/Collaborative_Whiteboard",
+      },
+    ],
   },
   {
     id: "satellite",
@@ -131,9 +151,67 @@ const projects: Project[] = [
     accent: "#A2AADB",
     status: "Not live yet",
     live: false,
-    links: [],
+    github: "https://github.com/PriyankaSiwach/satellite-platform",
+    links: [
+      { label: "View on GitHub", href: "https://github.com/PriyankaSiwach/satellite-platform" },
+    ],
+  },
+  {
+    id: "rag-qa",
+    title: "RAG Document Q&A",
+    category: "AI · RAG",
+    tagline: "Ask questions about any document using LangChain & Pinecone",
+    description:
+      "A retrieval-augmented generation app that uploads documents, embeds chunks with OpenAI, stores them in Pinecone, and answers questions only from your files — not from the model’s general knowledge.",
+    cardPoints: [
+      "Document chunking + embeddings",
+      "Pinecone semantic search",
+      "Grounded GPT answers from your docs",
+    ],
+    details: [
+      "Loads documents, splits them into chunks, and embeds each chunk with OpenAI",
+      "Stores embeddings in Pinecone for meaning-based retrieval",
+      "Retrieves the most relevant chunks and sends them with the question to GPT",
+      "Answers stay grounded in the uploaded document instead of general training data",
+    ],
+    stack: ["Python", "LangChain", "Pinecone", "OpenAI", "RAG"],
+    accent: "#898AC4",
+    status: "Open Source",
+    live: false,
+    github: "https://github.com/PriyankaSiwach/rag-document-qa",
+    links: [
+      { label: "View on GitHub", href: "https://github.com/PriyankaSiwach/rag-document-qa" },
+    ],
   },
 ];
+
+function ProjectIcon({ project }: { project: Project }) {
+  if (project.icon) {
+    return (
+      <div className="w-14 h-14 rounded-xl overflow-hidden border border-periwinkle-200/50 bg-white shadow-card shrink-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={project.icon} alt="" className="w-full h-full object-cover" />
+      </div>
+    );
+  }
+
+  const Icon =
+    project.id === "whiteboard"
+      ? PenTool
+      : project.id === "satellite"
+        ? Satellite
+        : project.id === "minilsm"
+          ? Database
+          : project.id === "rag-qa"
+            ? FileSearch
+            : Satellite;
+
+  return (
+    <div className="w-14 h-14 rounded-xl border border-periwinkle-200/50 bg-periwinkle-100/45 flex items-center justify-center text-periwinkle-400 shrink-0">
+      <Icon className="w-6 h-6" aria-hidden />
+    </div>
+  );
+}
 
 function ProjectModal({
   project,
@@ -193,6 +271,10 @@ function ProjectModal({
               <div className="w-[72px] h-[72px] rounded-2xl border border-periwinkle-200/55 bg-periwinkle-100/50 mb-4 flex items-center justify-center text-periwinkle-400">
                 {project.id === "whiteboard" ? (
                   <PenTool className="w-8 h-8" aria-hidden />
+                ) : project.id === "minilsm" ? (
+                  <Database className="w-8 h-8" aria-hidden />
+                ) : project.id === "rag-qa" ? (
+                  <FileSearch className="w-8 h-8" aria-hidden />
                 ) : (
                   <Satellite className="w-8 h-8" aria-hidden />
                 )}
@@ -242,18 +324,31 @@ function ProjectModal({
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            {project.links.map((link) => (
+            {project.github && (
               <a
-                key={link.href + link.label}
-                href={link.href}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glow-btn w-full sm:flex-1"
+                className="glow-btn-soft w-full sm:w-auto inline-flex items-center justify-center gap-2"
               >
-                {link.label} ↗
+                <GitHubIcon className="w-4 h-4" />
+                GitHub
               </a>
-            ))}
-            {!project.live && (
+            )}
+            {project.links
+              .filter((link) => !project.github || link.href !== project.github)
+              .map((link) => (
+                <a
+                  key={link.href + link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glow-btn w-full sm:flex-1"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            {!project.live && !project.github && (
               <div className="w-full sm:flex-1 px-4 py-3 rounded-xl border border-dashed border-periwinkle-300/60 text-center text-sm font-semibold text-ink-500 bg-periwinkle-100/30">
                 Coming soon — not live yet
               </div>
@@ -300,27 +395,10 @@ export default function SelectedWork() {
               <button
                 type="button"
                 onClick={() => setActiveId(project.id)}
-                className="flex flex-col flex-1 text-left p-6 sm:p-7 focus-visible:outline-none"
+                className="flex flex-col flex-1 text-left p-6 sm:p-7 pb-4 focus-visible:outline-none"
               >
                 <div className="flex items-start justify-between gap-3 mb-5">
-                  {project.icon ? (
-                    <div className="w-14 h-14 rounded-xl overflow-hidden border border-periwinkle-200/50 bg-white shadow-card shrink-0">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.icon}
-                        alt=""
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-14 h-14 rounded-xl border border-periwinkle-200/50 bg-periwinkle-100/45 flex items-center justify-center text-periwinkle-400 shrink-0">
-                      {project.id === "whiteboard" ? (
-                        <PenTool className="w-6 h-6" aria-hidden />
-                      ) : (
-                        <Satellite className="w-6 h-6" aria-hidden />
-                      )}
-                    </div>
-                  )}
+                  <ProjectIcon project={project} />
                   <span
                     className={`text-[10px] font-mono px-2.5 py-1 rounded-full border shrink-0 ${
                       project.live
@@ -373,18 +451,33 @@ export default function SelectedWork() {
                 </div>
               </button>
 
-              {project.live && project.links[0] && (
-                <div className="px-6 sm:px-7 pb-6 sm:pb-7 -mt-1">
+              <div className="px-6 sm:px-7 pb-6 sm:pb-7 flex items-center justify-between gap-3">
+                {project.github ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-periwinkle-200/70 text-ink-500 hover:text-ink-900 hover:bg-periwinkle-100/60 hover:border-periwinkle-300 transition-colors"
+                    aria-label={`${project.title} on GitHub`}
+                  >
+                    <GitHubIcon className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <span className="w-9" />
+                )}
+
+                {project.live && project.links[0] && (
                   <a
                     href={project.links[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glow-btn w-full sm:w-auto"
+                    className="glow-btn !px-3 !py-1.5 !text-[11px]"
                   >
                     {project.links[0].label} ↗
                   </a>
-                </div>
-              )}
+                )}
+              </div>
             </article>
           ))}
         </div>

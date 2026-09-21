@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2.01-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z" />
+    </svg>
+  );
+}
 
 const projects = [
   {
@@ -14,7 +21,7 @@ const projects = [
     description:
       "A crash-safe LSM-tree storage engine built from scratch in Python. Zero lost acknowledged writes across 1,000 randomized SIGKILL trials, with Bloom filters that cut missing-key disk reads 99% and compaction that shrank disk usage 54%.",
     stack: ["Python", "LSM-Tree", "WAL", "Bloom Filters", "Compaction"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/Storage-Engine" },
     metrics: ["0 lost writes · 1K crash trials", "4.5× lookup throughput", "54% less disk · 40× faster p50"],
     logoPlaceholder: "🗄️",
   },
@@ -29,7 +36,10 @@ const projects = [
     description:
       "An App Store iOS app with a GPT-4o vision pipeline, local API-outage fallback, token-bucket rate limiting, LRU caching, JWT auth, and GitHub Actions + Vitest CI covering scan quotas, allergy filters, and malformed AI JSON.",
     stack: ["React", "TypeScript", "Capacitor", "Supabase", "OpenAI", "RevenueCat"],
-    links: { app: "https://apps.apple.com/us/app/chefcoach/id6777299606", github: "#" },
+    links: {
+      app: "https://apps.apple.com/us/app/chefcoach/id6777299606",
+      github: "https://github.com/PriyankaSiwach/ChefCoach",
+    },
     metrics: ["GPT-4o vision + fallback", "Token-bucket + LRU cache", "Vitest CI pipeline"],
     logoPlaceholder: "🍳",
   },
@@ -44,7 +54,10 @@ const projects = [
     description:
       "An end-to-end AI job-prep platform that scores resumes against job posts and returns keyword gaps and rewrite suggestions in under 2 minutes, with a token-bucket rate limiter across 15+ API routes to prevent OpenAI cost overrun.",
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Clerk", "Stripe", "OpenAI"],
-    links: { live: "https://applyfy.net", github: "#" },
+    links: {
+      live: "https://applyfy.net",
+      github: "https://github.com/PriyankaSiwach/Applyfy",
+    },
     metrics: ["<2 min resume–job scoring", "Rate limiter · 15+ routes", "Clerk + Stripe + Supabase"],
     logoPlaceholder: "⚡",
   },
@@ -59,9 +72,24 @@ const projects = [
     description:
       "A real-time collaborative whiteboard where multiple users draw and edit simultaneously with conflict-free sync. Uses CRDTs for eventual consistency, Redis pub/sub for low-latency fan-out, and Dockerized Redis for reproducible local and deployed environments — tested with 100+ concurrent users.",
     stack: ["CRDTs", "Redis", "Docker", "WebSockets", "TypeScript"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/Collaborative_Whiteboard" },
     metrics: ["100+ concurrent users", "CRDT conflict-free sync", "Redis + Docker"],
     logoPlaceholder: "🖊️",
+  },
+  {
+    id: "satellite",
+    title: "Satellite Telemetry",
+    tagline: "Satellite tracking with AWS-backed telemetry storage",
+    category: "Cloud · Space Data",
+    status: "Built",
+    statusColor: "#A2AADB",
+    color: "#A2AADB",
+    description:
+      "A satellite telemetry website that tracks latitude, longitude, and speed for satellites in space, with AWS DynamoDB integrated to store and retrieve telemetry data.",
+    stack: ["AWS DynamoDB", "AWS", "Next.js", "TypeScript"],
+    links: { github: "https://github.com/PriyankaSiwach/satellite-platform" },
+    metrics: ["Lat / long / speed tracking", "DynamoDB storage", "Cloud-backed pipeline"],
+    logoPlaceholder: "🛰️",
   },
   {
     id: "brain",
@@ -79,6 +107,21 @@ const projects = [
     logoPlaceholder: "🧠",
   },
   {
+    id: "rag-qa",
+    title: "RAG Document Q&A",
+    tagline: "Ask questions about any document using LangChain & Pinecone",
+    category: "AI · RAG",
+    status: "Open Source",
+    statusColor: "#898AC4",
+    color: "#898AC4",
+    description:
+      "A retrieval-augmented generation app that embeds document chunks with OpenAI, stores them in Pinecone, and answers questions only from your files — not from the model’s general knowledge.",
+    stack: ["Python", "LangChain", "Pinecone", "OpenAI", "RAG"],
+    links: { github: "https://github.com/PriyankaSiwach/rag-document-qa" },
+    metrics: ["Document embeddings", "Semantic search", "Grounded GPT answers"],
+    logoPlaceholder: "📄",
+  },
+  {
     id: "portfolio",
     title: "Portfolio Website",
     tagline: "This site — built with Next.js + TypeScript",
@@ -89,7 +132,7 @@ const projects = [
     description:
       "A custom portfolio built with Next.js, TypeScript, and Tailwind CSS — featuring a soft glass aesthetic, subtle network particle backdrop, and fully responsive layout.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    links: { github: "#" },
+    links: { github: "https://github.com/PriyankaSiwach/priyanka-portfolio" },
     metrics: ["Responsive design", "Glass UI", "Smooth scroll"],
     logoPlaceholder: "🌐",
   },
@@ -189,16 +232,29 @@ export default function Projects() {
               />
 
               <div className="flex items-center justify-between gap-3 flex-wrap">
-                <div className="flex flex-wrap gap-1.5">
-                  {project.stack.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded font-mono text-xs border"
-                      style={{ borderColor: `${project.color}25`, color: `${project.color}` }}
+                <div className="flex items-center gap-3">
+                  {project.links.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-periwinkle-200/70 text-ink-500 hover:text-ink-900 hover:bg-periwinkle-100/60 transition-colors"
+                      aria-label={`${project.title} on GitHub`}
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <GitHubIcon className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.stack.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 rounded font-mono text-xs border"
+                        style={{ borderColor: `${project.color}25`, color: `${project.color}` }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <div className="flex gap-3">
                   {project.links.live && (
@@ -214,17 +270,11 @@ export default function Projects() {
                   {project.links.app && (
                     <a
                       href={project.links.app}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-mono text-xs text-periwinkle-400 hover:text-periwinkle-500 transition-colors"
                     >
                       App Store ↗
-                    </a>
-                  )}
-                  {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      className="font-mono text-xs text-ink-300 hover:text-ink-500 transition-colors"
-                    >
-                      GitHub ↗
                     </a>
                   )}
                 </div>

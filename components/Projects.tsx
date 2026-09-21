@@ -4,6 +4,21 @@ import Link from "next/link";
 
 const projects = [
   {
+    id: "minilsm",
+    title: "MiniLSM",
+    tagline: "Crash-safe LSM-tree key-value storage engine",
+    category: "Systems",
+    status: "Open Source",
+    statusColor: "#6F70B5",
+    color: "#6F70B5",
+    description:
+      "A crash-safe LSM-tree storage engine built from scratch in Python. Zero lost acknowledged writes across 1,000 randomized SIGKILL trials, with Bloom filters that cut missing-key disk reads 99% and compaction that shrank disk usage 54%.",
+    stack: ["Python", "LSM-Tree", "WAL", "Bloom Filters", "Compaction"],
+    links: { github: "#" },
+    metrics: ["0 lost writes · 1K crash trials", "4.5× lookup throughput", "54% less disk · 40× faster p50"],
+    logoPlaceholder: "🗄️",
+  },
+  {
     id: "chefcoach",
     title: "ChefCoach",
     tagline: "GPT-4o vision pipeline with rate limiting & CI",

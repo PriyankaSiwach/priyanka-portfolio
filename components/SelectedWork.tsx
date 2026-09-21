@@ -21,6 +21,30 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: "minilsm",
+    title: "MiniLSM",
+    category: "Systems",
+    tagline: "Crash-safe LSM-tree key-value storage engine",
+    description:
+      "A crash-safe LSM-tree storage engine built from scratch in Python. A checksummed write-ahead log keeps acknowledged writes durable across crashes, Bloom filters skip almost every missing-key disk read, and streaming compaction collapses old tables into one.",
+    cardPoints: [
+      "0 lost writes across 1,000 SIGKILL trials",
+      "99% fewer disk reads · 4.5× lookups",
+      "54% less disk · ~40× faster p50",
+    ],
+    details: [
+      "Zero lost acknowledged writes across 1,000 randomized SIGKILL trials (~2.2M operations) via a checksummed write-ahead log, torn-write recovery, and atomic file renames",
+      "Per-file Bloom filters cut disk reads per missing-key lookup 99% (21.96 → 0.19) and raised lookup throughput 4.5× (5.7K → 25.4K/sec)",
+      "Streaming k-way merge compaction collapsed 44 SSTables into 1, cutting disk usage 54% and missing-key p50 latency ~40×",
+      "Crash harness fails when the log write is removed, and each optimization is checked against saved baselines",
+    ],
+    stack: ["Python", "LSM-Tree", "WAL", "Bloom Filters", "Compaction"],
+    accent: "#6F70B5",
+    status: "Open Source",
+    live: false,
+    links: [],
+  },
+  {
     id: "chefcoach",
     title: "ChefCoach",
     category: "iOS App",

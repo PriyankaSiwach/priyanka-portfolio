@@ -4,6 +4,23 @@ import Link from "next/link";
 
 const projects = [
   {
+    id: "minilsm",
+    title: "MiniLSM",
+    tagline: "Crash-safe LSM-tree key-value storage engine",
+    category: "Systems",
+    status: "Open Source",
+    statusColor: "#6F70B5",
+    color: "#6F70B5",
+    description:
+      "A crash-safe LSM-tree storage engine built from scratch in Python, with a checksummed write-ahead log, torn-write recovery, Bloom filters, and streaming compaction.",
+    longDescription:
+      "Built a crash-safe LSM-tree storage engine from scratch with zero lost acknowledged writes across 1,000 randomized SIGKILL trials (~2.2M operations), using a checksummed write-ahead log, torn-write recovery, and atomic file renames. Bloom filters (10 bits/key) cut disk reads per missing-key lookup 99% and raised lookup throughput 4.5×. Streaming k-way merge compaction reduced disk usage 54% and missing-key p50 latency ~40×. A negative test proved the crash harness detects real data loss, and each optimization was checked against saved baselines.",
+    stack: ["Python", "LSM-Tree", "WAL", "Bloom Filters", "Compaction"],
+    links: { github: "#" },
+    metrics: ["0 lost writes · 1K crash trials", "4.5× lookup throughput", "54% less disk · 40× faster p50"],
+    logoPlaceholder: "🗄️",
+  },
+  {
     id: "chefcoach",
     title: "ChefCoach",
     tagline: "GPT-4o vision pipeline with rate limiting & CI",

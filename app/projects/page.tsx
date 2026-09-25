@@ -50,21 +50,21 @@ const projects = [
   {
     id: "applyfy",
     title: "Applyfy",
-    tagline: "Resume–job scoring with cost-controlled API layer",
+    tagline: "GPT-4o job platform with AWS resume-parsing backend",
     category: "AI Job Platform",
     status: "Live · applyfy.net",
     statusColor: "#A2AADB",
     color: "#A2AADB",
     description:
-      "An end-to-end AI job-prep platform that scores resumes against job posts and returns keyword gaps and rewrite suggestions in under 2 minutes — with a token-bucket rate limiter across 15+ API routes to throttle OpenAI usage and prevent cost overrun.",
+      "Built Applyfy, an AI job platform integrating OpenAI GPT-4o across 12 features, protected by Redis-backed rate limiting (5 req/min/user), reaching 36 signups.",
     longDescription:
-      "Applyfy is a production job-prep platform at applyfy.net. It scores a resume against a job post and returns keyword gaps plus rewrite suggestions in under 2 minutes. A token-bucket rate limiter runs across 15+ API routes to throttle per-user OpenAI calls and prevent cost overrun. Built with Next.js, TypeScript, React, Tailwind CSS, Supabase, Clerk, Stripe, and the OpenAI API.",
-    stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Clerk", "Stripe", "OpenAI"],
+      "Engineered a serverless AWS resume-parsing pipeline (API Gateway, Lambda, S3, DynamoDB, WAF, CDK). Diagnosed and isolated two independent throttling layers — WAF edge rate limiting vs. Lambda account concurrency — under 50-request concurrent load, sustaining 45 req/sec at 1.9s latency for legitimate traffic.",
+    stack: ["Next.js", "TypeScript", "OpenAI", "Redis", "AWS", "Lambda", "DynamoDB", "CDK"],
     links: {
       live: "https://applyfy.net",
       github: "https://github.com/PriyankaSiwach/Applyfy",
     },
-    metrics: ["<2 min resume–job scoring", "Rate limiter · 15+ routes", "Clerk + Stripe + Supabase"],
+    metrics: ["GPT-4o · 12 features", "36 signups", "45 req/sec · 1.9s latency"],
     logoPlaceholder: "⚡",
   },
   {

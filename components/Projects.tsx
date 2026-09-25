@@ -46,19 +46,19 @@ const projects = [
   {
     id: "applyfy",
     title: "Applyfy",
-    tagline: "Resume–job scoring with cost-controlled API layer",
+    tagline: "GPT-4o job platform with AWS resume-parsing backend",
     category: "AI Job Platform",
     status: "Live · applyfy.net",
     statusColor: "#A2AADB",
     color: "#A2AADB",
     description:
-      "An end-to-end AI job-prep platform that scores resumes against job posts and returns keyword gaps and rewrite suggestions in under 2 minutes, with a token-bucket rate limiter across 15+ API routes to prevent OpenAI cost overrun.",
-    stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Supabase", "Clerk", "Stripe", "OpenAI"],
+      "Built Applyfy, an AI job platform integrating OpenAI GPT-4o across 12 features, protected by Redis-backed rate limiting (5 req/min/user), reaching 36 signups. Engineered a serverless AWS resume-parsing pipeline (API Gateway, Lambda, S3, DynamoDB, WAF, CDK) and sustained 45 req/sec at 1.9s latency under concurrent load.",
+    stack: ["Next.js", "TypeScript", "OpenAI", "Redis", "AWS", "Lambda", "DynamoDB", "CDK"],
     links: {
       live: "https://applyfy.net",
       github: "https://github.com/PriyankaSiwach/Applyfy",
     },
-    metrics: ["<2 min resume–job scoring", "Rate limiter · 15+ routes", "Clerk + Stripe + Supabase"],
+    metrics: ["GPT-4o · 12 features", "36 signups", "45 req/sec · 1.9s latency"],
     logoPlaceholder: "⚡",
   },
   {

@@ -29,15 +29,15 @@ const experiences = [
     period: "2024 – Present",
     type: "Founder",
     summary:
-      "Building Applyfy, a production AI job-prep platform, and ChefCoach, an App Store iOS app with vision pipelines and cost-controlled APIs.",
+      "Building Applyfy, an AI job platform with GPT-4o and an AWS resume-parsing backend, and ChefCoach, an App Store iOS app with vision pipelines and cost-controlled APIs.",
     description:
-      "Founded and shipped two products end to end — backend systems, auth, rate limiting, CI, payments, and App Store / web launch.",
+      "Founded and shipped two products end to end — AI features, serverless AWS backends, rate limiting, CI, payments, and App Store / web launch.",
     highlights: [
-      "Built Applyfy (applyfy.net) — resume–job scoring with keyword gaps and rewrites in under 2 minutes, plus a token-bucket rate limiter across 15+ API routes to control OpenAI cost.",
+      "Built Applyfy, an AI job platform integrating OpenAI GPT-4o across 12 features, protected by Redis-backed rate limiting (5 req/min/user), reaching 36 signups.",
+      "Engineered a serverless AWS resume-parsing pipeline (API Gateway, Lambda, S3, DynamoDB, WAF, CDK); diagnosed WAF vs. Lambda concurrency throttling under 50-request load, sustaining 45 req/sec at 1.9s latency.",
       "Shipped ChefCoach to the App Store with a GPT-4o vision pipeline, local API-outage fallback, token-bucket rate limiting, LRU caching, JWT auth, and GitHub Actions + Vitest CI.",
-      "Owned engineering across both products: auth, subscriptions/payments, input validation, and live deployments.",
     ],
-    stack: ["Next.js", "TypeScript", "OpenAI", "React", "Supabase", "Clerk", "Stripe", "Capacitor"],
+    stack: ["Next.js", "TypeScript", "OpenAI", "Redis", "AWS", "Lambda", "DynamoDB", "Capacitor"],
   },
   {
     id: "moma",
